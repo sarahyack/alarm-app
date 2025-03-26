@@ -1,0 +1,16 @@
+[package]
+name = "alarm-app"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+egui = "0.29"
+eframe = "0.29"
+chrono = "0.4"
+winrt-notification = "0.5"
+rodio = "0.20"
+job_scheduler = "1.2"
+
+[[bin]]
+name = "alarm-app"
+path = "src/main.rs"
