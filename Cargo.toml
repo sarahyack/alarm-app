@@ -2,12 +2,13 @@
 name = "alarm-app"
 version = "0.1.0"
 edition = "2021"
+build = "build.rs"
 
 [dependencies]
 egui = "0.29"
 eframe = "0.29"
 chrono = "0.4"
-winrt-notification = "0.5"
+winrt-toast-reborn = "0.2.1"
 rodio = "0.20"
 job_scheduler = "1.2"
 
