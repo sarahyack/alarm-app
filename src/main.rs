@@ -1,9 +1,15 @@
+// mod alarm;
+mod notification;
+// mod scheduler;
+
+use std::path::Path;
+use winrt_toast_reborn::register;
+
 pub fn main() {
-    use winrt_notification::{Duration, Toast};
-    Toast::new(Toast::POWERSHELL_APP_ID)
-        .title("Hello Rustling!")
-        .text1("This is a simple example")
-        .duration(Duration::Short)
-        .show()
-        .expect("Failed to show toast");
+    let path = Path::new(env!("CARGO_MANIFEST_DIR"))
+        .join("assets/images")
+        .join("alarm-app-icon.ico");
+    register("SarahY.AlarmApp", "Alarm App", Some(&path)).expect("Failed to register app");
+
+    notification::send_toast();
 }
